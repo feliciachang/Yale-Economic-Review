@@ -1,38 +1,70 @@
 .App {
-  text-align: center;
+  margin-top: 20px;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  height: 10vmin;
+  min-width: 70px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
+/* @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
+} */
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  position: sticky;
+  position: -webkit-sticky;
+  top: -1px; /* required */
+}
+
+.divided {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-left: -60vw;
+}
+
+.divider {
+  flex-grow: 1;
+  border-bottom: 2px solid black;
+}
+
+.nav-divider {
+  flex-grow: 1;
+  border-bottom: 2px solid black;
 }
 
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
+.sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 10%; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  overflow: auto; /* Disable horizontal scroll */
+}
+
+.sidenav a {
+  padding: 20px 10% 20px 15%;
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: bold;
+  color: #000;
+  display: block;
+}
+
+/* @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
-}
+} */
