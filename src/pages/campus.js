@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./pages.css";
-
 const contentful = require("contentful");
 
 const Campus = () => {
@@ -17,6 +16,7 @@ const Campus = () => {
         'fields.articleType': 'Campus',
         'content_type': 'articles'
       });
+
       await console.log(response);
       setCampusContent(response.items);
     }
@@ -24,12 +24,25 @@ const Campus = () => {
     getArticles();
   }, [])
 
-  return (
-    <div className="content">
-      <h1>Title</h1>
-      <h5>Subtitle</h5>
-    </div>
-  );
+  if(campusContent != null){
+    return (
+      <div className="content">
+        <div className="section">
+        <div className="small-card-container">
+          {campusContent.map((article, i) => (
+            <div key={i} style={{gridColumnStart: i+1, gridColumnEnd: i+2}}>
+              <div className="small-img">
+              </div>
+              <div style={{marginTop: "10px"}}>{article.fields.title}</div>
+            </div>
+          ))}
+        </div> 
+        </div>
+      </div>
+    );
+  }
+
+  return <div>null</div>;
 };
 
 export default Campus;

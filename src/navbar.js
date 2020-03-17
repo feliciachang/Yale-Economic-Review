@@ -17,6 +17,7 @@ function Navbar() {
           <div class="sidenav">
             <a href="#" />
             <br />
+            <br />
             <a href="/">Home</a>
             <div class="nav-divider"> </div>
             <a href="/campus">Campus</a>

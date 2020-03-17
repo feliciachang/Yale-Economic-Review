@@ -5,6 +5,7 @@ import logo from "./logo.svg";
 import "./App.css";
 
 import Navbar from "./navbar.js";
+import Footer from "./components/footer.js";
 
 import Home from "./pages/home";
 import Campus from "./pages/campus";
@@ -19,6 +20,7 @@ function App() {
         <Route path="/" exact component={Home} />
         <Route path="/campus" exact component={Campus} />
       </Router>
+      <Footer />
     </div>
   );
 }
