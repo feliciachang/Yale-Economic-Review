@@ -21,7 +21,12 @@ function Cover() {
 
       setTitle(response.fields.title);
       setAuthor(response.fields.authors[0]);
-      setPhoto("https://felswebsite.s3.amazonaws.com/BectonWall2.jpg");
+
+
+      let asset = await client.getAsset("SwkqadbMXFiT0oKlgMwBl");
+      await console.log("cover photos", asset.fields.file.url);
+      setPhoto('https:' + asset.fields.file.url);
+
     };
     getArticle();
   }, []);

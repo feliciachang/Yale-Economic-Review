@@ -14,7 +14,7 @@ function Navbar() {
     <div className="App">
       <div className="App-header">
         <Router>
-          <div class="sidenav">
+          <div className="sidenav">
             <a href="#" />
             <br />
             <br />
