@@ -126,11 +126,11 @@ function Home() {
     <div className="content">
       <Cover />
       <br />
-      <div class="section-divider" />
+      <div className="section-divider" />
       <br />
       <Mag />
       <br />
-      <div class="section-divider" />
+      <div className="section-divider" />
       <br />
     </div>
   );

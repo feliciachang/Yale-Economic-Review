@@ -19,27 +19,27 @@ function Navbar() {
             <br />
             <br />
             <a href="/">Home</a>
-            <div class="nav-divider"> </div>
+            <div className="nav-divider"> </div>
             <a href="/campus">Campus</a>
-            <div class="nav-divider"> </div>
+            <div className="nav-divider"> </div>
             <Link to="/opinion">Opinion</Link>
-            <div class="nav-divider"> </div>
+            <div className="nav-divider"> </div>
             <Link to="/us">U.S.</Link>
-            <div class="nav-divider"> </div>
+            <div className="nav-divider"> </div>
             <Link to="/data">Data</Link>
-            <div class="nav-divider"> </div>
+            <div className="nav-divider"> </div>
             <Link to="/mag">Mag</Link>
-            <div class="nav-divider"> </div>
+            <div className="nav-divider"> </div>
             <Link to="/about">About</Link>
-            <div class="nav-divider"> </div>
+            <div className="nav-divider"> </div>
             <Link to="/join">Join</Link>
-            <div class="nav-divider"> </div>
+            <div className="nav-divider"> </div>
           </div>
         </Router>
         <div className="divided">
-          <span class="divider" />
+          <span className="divider" />
           <img src={logo} className="App-logo" alt="logo" />
-          <span class="divider" />
+          <span className="divider" />
         </div>
       </div>
     </div>
