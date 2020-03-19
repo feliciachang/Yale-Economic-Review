@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import {Row, Col} from "reactstrap";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./pages.css";
+import SignUp from "../components/signup.js";
 const contentful = require("contentful");
 
 function Cover() {
@@ -33,7 +32,7 @@ function Cover() {
 
   return (
     <div className="img-container">
-      <img className="img" src={photo} />
+      <img alt="" className="img" src={photo} />
       <div className="img-text">
         <h1>{title}</h1>
         <h5>By {author}</h5>
@@ -68,14 +67,15 @@ function Mag() {
   if (magContent != null) {
     return (
       <div className="section">
-      <div>Highlights </div>
+      <h1>Highlights </h1>
       <div className="small-card-container">
         {magContent.map((article, i) => (
-          <div style={{gridColumnStart: i+1, gridColumnEnd: i+2}}>
+          <div key={i} style={{gridColumnStart: i+1, gridColumnEnd: i+2, backgroundColor: "#000", opacity: "90%"}}>
             <div className="small-img">
-            <img className="small-card-img" src={asset}/>
+            <img alt="" className="small-card-img" src={asset}/>
             </div>
-            <div style={{marginTop: "10px"}}>{article.fields.title}</div>
+            <div style={{color: "#FFF", padding: "20px", paddingBottom: "0px", fontSize: "20px", fontWeight: "bold"}}>{article.fields.title}</div>
+            <div style={{color: "#FFF", padding: "10px 20px 20px 20px"}}>By {article.fields.authors[0]}</div>
           </div>
         ))}
       </div> 
@@ -86,40 +86,67 @@ function Mag() {
   return <div>null</div>;
 }
 
-{/* <div className="small-card-container">
-{magContent.map((article, i) => (
-     <div style={{gridColumnStart: i, gridColumnEnd: i+1}}>
-      <img className="small-card-img" src={asset}/>
-      <div className="small-card-text">{article.fields.title}</div>
-    </div>
-))}
-</div> */}
+function VerticalContent() {
+  const [magContent, setMagContent] = useState([]);
+  const [asset, setAsset] = useState("");
 
-{/* <div className="small-card-container">
-{magContent.map((article, i) => (
-  <div style={{
-    gridColumnStart: i,
-    gridColumnEnd: i+1,
-    gridRow: 1,
-    display: "grid",
-    gridTemplateColumns: "1fr",
-    gridTemplateRows: "200px auto auto",
-    position: "relative",
-  }}>
-     <div style={{
-      height: "200px", 
-      gridColumn: i, 
-      gridRow: 1,
-      position: "relative",
-      overflow: "hidden"}}>
+  useEffect(() => {
+    const getArticles = async () => {
+      let client = contentful.createClient({
+        space: "obm5e8rm0eay",
+        accessToken: "xLxHCYuAYz3XfWCE_29SoJe9eVVHfnzTrgIuKg1sIqU"
+      });
 
-        <img className="small-img" src={asset}/>
+      let response = await client.getEntries();
+      await console.log(response.items[0]);
+      setMagContent(response.items.slice(0, 3));
+
+      let asset = await client.getAsset("4UIL0ZhTJmTNmBD4bcLEdF");
+      await console.log(asset.fields.file.url);
+      setAsset('https:' + asset.fields.file.url);
+
+    };
+    getArticles();
+  }, []);
+
+  if (magContent != null) {
+    return (
+      <div className="section">
+      <div className="dual-section">
+        <div>
+          <h1>More From</h1>
+          <div className="vertical-container">
+            {magContent.map((article, i) => (
+              <div key={i} style={{gridRowStart: i+1, gridRowEnd: i+2, backgroundColor: "#000", opacity: "90%"}}>
+                <div className="small-img">
+                <img alt="" className="small-card-img" src={asset}/>
+                </div>
+                <div style={{color: "#FFF", padding: "20px", paddingBottom: "0px", fontSize: "20px", fontWeight: "bold"}}>{article.fields.title}</div>
+            <div style={{color: "#FFF", padding: "10px 20px 20px 20px"}}>By {article.fields.authors[0]}</div>
+              </div>
+            ))}
+          </div> 
+        </div>
+        <div>
+          <h1>Most Read</h1>
+          <div className="vertical-container">
+            {magContent.map((article, i) => (
+              <div key={i} style={{gridRowStart: i+1, gridRowEnd: i+2, backgroundColor: "#000", opacity: "90%"}}>
+                <div className="small-img">
+                <img alt="" className="small-card-img" src={asset}/>
+                </div>
+                <div style={{marginTop: "10px"}}>{article.fields.title}</div>
+              </div>
+            ))}
+          </div> 
+        </div>
       </div>
-      
-      <h4 className="small-card-text">{article.fields.title}</h4>
-  </div>
-))}
-</div> */}
+      </div>
+    );
+  }
+
+  return <div>null</div>;
+}
 
 function Home() {
   return (
@@ -131,7 +158,11 @@ function Home() {
       <Mag />
       <br />
       <div className="section-divider" />
-      <br />
+      <VerticalContent/>
+      <br/>
+      <br/>
+      <SignUp/>
+      <br/>
     </div>
   );
 }
