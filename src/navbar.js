@@ -72,7 +72,7 @@ function Navbar() {
                   borderTop: "1px solid #000",
                   padding: 0,
             }}/>  
-            <Link to="/mag">Mag</Link>
+            <a href="#">Mag</a>
             <hr style={{
                   display: "block",
                   border: 0,
