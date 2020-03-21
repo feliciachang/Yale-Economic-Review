@@ -11,18 +11,28 @@ function Navbar() {
         <Router>
           <div className="sidenav">
             <a href="#" />
-            <br />
-            <br />
-            <br />
+            <div style={{paddingBottom: "80px"}}></div>
             <a href="/">About</a>
-            <div className="nav-divider"> </div>
+            <hr style={{
+                  display: "block",
+                  border: 0,
+                  borderTop: "1px solid #000",
+                  padding: 0,
+            }}/>          
             <a href="/subpages?tag=Campus">Team</a>
-            <div className="nav-divider"> </div>
+            <hr style={{
+                  display: "block",
+                  border: 0,
+                  borderTop: "1px solid #000",
+                  padding: 0,
+            }}/>
             <a href="/subpages?tag=Opinion">Join</a>
-            <div style={{ 
-              flexGrow: 1,
-              borderBottom: "1px solid black"
-              }}> </div>
+            <hr style={{
+                  display: "block",
+                  border: 0,
+                  borderTop: "1px solid #000",
+                  padding: 0,
+            }}/>
           </div>
           <div className="leftnav">
             <a href="#" />
