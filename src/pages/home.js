@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
+import { useHistory, withRouter } from 'react-router-dom';
 import "./pages.css";
 import SignUp from "../components/signup.js";
 const contentful = require("contentful");
 
 function Cover() {
-  const [title, setTitle] = useState("");
-  const [author, setAuthor] = useState("");
+  const [cover, setCover] = useState(null);
   const [photo, setPhoto] = useState("");
+  let history = useHistory();
 
   useEffect(() => {
     const getArticle = async () => {
@@ -16,10 +17,8 @@ function Cover() {
       });
 
       let response = await client.getEntry("4GRjQ8wzdSyw0MXCPGmsSi");
-      await console.log(response.fields);
-
-      setTitle(response.fields.title);
-      setAuthor(response.fields.authors[0]);
+      console.log(response);
+      setCover(response);
 
 
       let asset = await client.getAsset("SwkqadbMXFiT0oKlgMwBl");
@@ -30,33 +29,49 @@ function Cover() {
     getArticle();
   }, []);
 
+  const goToArticle = () => {
+    history.push({
+      pathname: "/content/" + cover.sys.id,
+      search: '?id='+cover.sys.id,
+      state: {contentId: cover.sys.id}
+    })
+  }
+
   return (
-    <div className="img-container">
-      <img alt="" className="img" src={photo} />
-      <div style={{
-          position: "absolute",
-          bottom: "-4%",
-          color: "#fff",
-          opacity: "100%",
-          paddingRight: "20%"
-      }}>
-        <div style={{
-            fontSize: "1.3vw",
-            fontWeight: "bold",
-            textAlign: "center",
-            color: "black",
-            backgroundColor: "white",
-            borderRadius: "0rem 2rem 2rem 0rem",
-            padding: "3px 10px 3px 3px",
-            width: "15%"
-        }}>Cover Story</div>
-        <div style={{
-            right: 0,
-            fontSize: "9vw",
-            fontWeight: "bold",
-            textAlign: "left"
-        }}>{title}</div>
-      </div>
+    <div>
+      {cover != null ? (
+             <div className="img-container" onClick={() => goToArticle()}>
+             <img alt="" className="img" src={photo} />
+             <div style={{
+                 position: "absolute",
+                 bottom: "-4%",
+                 color: "#fff",
+                 opacity: "100%",
+                 paddingRight: "20%"
+             }}>
+               <div style={{
+                   fontSize: "1.3vw",
+                   fontWeight: "bold",
+                   textAlign: "center",
+                   color: "black",
+                   backgroundColor: "white",
+                   borderRadius: "0rem 2rem 2rem 0rem",
+                   padding: "3px 10px 3px 3px",
+                   width: "15%"
+               }}>Cover Story</div>
+               <div style={{
+                   right: 0,
+                   fontSize: "9vw",
+                   fontWeight: "bold",
+                   textAlign: "left"
+               }}>{cover.fields.title}</div>
+             </div>
+           </div>
+      ):(
+        <div>
+          content loading
+        </div>
+      )}
     </div>
   );
 }
@@ -74,6 +89,7 @@ function Cover() {
 function Mag() {
   const [magContent, setMagContent] = useState([]);
   const [asset, setAsset] = useState("");
+  let history = useHistory();
 
   useEffect(() => {
     const getArticles = async () => {
@@ -94,13 +110,21 @@ function Mag() {
     getArticles();
   }, []);
 
+  const goToArticle = (id) => {
+    history.push({
+      pathname: "/content/" + id,
+      search: '?id='+ id,
+      state: {contentId: id}
+    })
+  }
+
   if (magContent != null) {
     return (
       <div className="section">
       <h1>Highlights </h1>
       <div className="small-card-container">
         {magContent.map((article, i) => (
-          <div key={i} style={{gridColumnStart: i+1, gridColumnEnd: i+2, backgroundColor: "#000", opacity: "90%"}}>
+          <div onClick ={()=>goToArticle(article.sys.id)} key={i} style={{gridColumnStart: i+1, gridColumnEnd: i+2, backgroundColor: "#000", opacity: "90%"}}>
             <div className="small-img">
             <img alt="" className="small-card-img" src={asset}/>
             </div>
@@ -128,6 +152,7 @@ function ToggleSubjects() {
   const [magContent, setMagContent] = useState([]);
   const [contentType, setContentType] = useState("Campus");
   const [asset, setAsset] = useState("");
+  let history = useHistory();
 
   useEffect(() => {
     const getArticles = async () => {
@@ -152,6 +177,14 @@ function ToggleSubjects() {
     getArticles();
   }, [contentType]);
 
+  const goToArticle = (id) => {
+    history.push({
+      pathname: "/content/" + id,
+      search: '?id='+ id,
+      state: {contentId: id}
+    })
+  }
+
   if (magContent != null) {
     return (
       <div className="section">
@@ -164,7 +197,7 @@ function ToggleSubjects() {
       </div>
       <div className="small-card-container">
         {magContent.map((article, i) => (
-          <div key={i} style={{gridColumnStart: i+1, gridColumnEnd: i+2, border: "1px solid black", opacity: "100%"}}>
+          <div onClick ={()=>goToArticle(article.sys.id)} key={i} style={{gridColumnStart: i+1, gridColumnEnd: i+2, border: "1px solid black", opacity: "100%"}}>
             <div className="small-img">
             <img alt="" className="small-card-img" src={asset}/>
             </div>
