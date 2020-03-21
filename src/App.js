@@ -8,7 +8,7 @@ import Navbar from "./navbar.js";
 import Footer from "./components/footer.js";
 
 import Home from "./pages/home";
-import Campus from "./pages/campus";
+import SubPages from "./pages/subpages";
 import Content from "./components/content";
 
 // import { useEffect }
@@ -19,7 +19,7 @@ function App() {
       <Navbar />
       <Router>
         <Route path="/" exact component={Home} />
-        <Route path="/campus" exact component={Campus} />
+        <Route path="/subpages" exact component={SubPages} />
         <Route path="/content/:id" exact component={Content}/>
       </Router>
       <Footer />

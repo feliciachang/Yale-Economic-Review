@@ -4,7 +4,7 @@ import "./pages.css";
 const contentful = require("contentful");
 
 
-const Campus = () => {
+const SubPages = () => {
   const [campusContent, setCampusContent] = useState([]);
   const [asset, setAsset] = useState("");
   let history = useHistory();
@@ -16,8 +16,12 @@ const Campus = () => {
         accessToken: "xLxHCYuAYz3XfWCE_29SoJe9eVVHfnzTrgIuKg1sIqU"
       });
 
+      let searchParams = new URLSearchParams(window.location.search);
+
+      console.log(searchParams.get("tag"));
+
       let response = await client.getEntries({
-        'fields.articleType': 'Campus',
+        'fields.articleType': searchParams.get("tag"),
         'content_type': 'articles'
       });
 
@@ -69,4 +73,4 @@ const Campus = () => {
   );
 };
 
-export default withRouter(Campus);
+export default withRouter(SubPages);

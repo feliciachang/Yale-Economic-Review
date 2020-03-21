@@ -18,7 +18,7 @@ const CustomForm = ({ status, message, onValidated }) => {
       style={{
         borderRadius: 2,
         padding: 10,
-        display: "inline-block"
+        display: "inline-block",
       }}
     >
       {status === "sending" && <div style={{ color: "#000" }}>sending...</div>}
@@ -35,7 +35,7 @@ const CustomForm = ({ status, message, onValidated }) => {
         />
       )}
       <input
-        style={{ fontSize: "15px", padding: 5, borderColor: '#000'}}
+        style={{ fontSize: "15px", padding: 10, border: '1px solid black'}}
         ref={node => (name = node)}
         type="text"
         placeholder="Your name"
@@ -43,28 +43,33 @@ const CustomForm = ({ status, message, onValidated }) => {
       <br />
       <br />
       <input
-        style={{ fontSize: "15px", padding: 5, borderColor: '#000'}}
+        style={{ fontSize: "15px", padding: 10, border: '1px solid black'}}
         ref={node => (email = node)}
         type="email"
         placeholder="Your email"
       />
       <br />
       <br />
-      <button style={{ fontSize: "15px", paddingLeft: 20, paddingRight: 20, paddingTop: 10, paddingBottom: 10, backgroundColor: '#000', color: '#fff'}} onClick={submit}>
+      <button onClick={submit}>
         Submit
       </button>
     </div>
   );
 };
 
+// .dual-section{
+//   display: flex;
+//   align-items: left;
+//   justify-content: space-between;
+// }
 class SignUp extends Component {
   render() {
     const url =
       "https://gmail.us20.list-manage.com/subscribe/post?u=efcf53e5cc53e101735848444&amp;id=9d9a5c1f74";
     return (
       <div style= {{marginLeft: "1%", marginRight: "5%", border: "solid black 2px", textAlign: "center"}}>
-      <div style={{display: "inline-block"}}>
-        <h1>Get updates from YER</h1>
+      <div style={{display: "flex",  padding:"5% 10% 5% 10%", justifyContent: "space-between"}}>
+        <h1 style={{maxWidth:"30vw", textAlign:"left"}}>Get updates from the YER</h1>
         <MailchimpSubscribe
           url={url}
           render={({ subscribe, status, message }) => (

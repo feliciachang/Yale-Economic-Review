@@ -13,21 +13,30 @@ function Navbar() {
             <a href="#" />
             <br />
             <br />
+            <br />
+            <a href="/">About</a>
+            <div className="nav-divider"> </div>
+            <a href="/subpages?tag=Campus">Team</a>
+            <div className="nav-divider"> </div>
+            <a href="/subpages?tag=Opinion">Join</a>
+            <div className="nav-divider"> </div>
+          </div>
+          <div className="leftnav">
+            <a href="#" />
+            <br />
+            <br />
+            <br />
             <a href="/">Home</a>
             <div className="nav-divider"> </div>
-            <a href="/campus">Campus</a>
+            <a href="/subpages?tag=Campus">Campus</a>
             <div className="nav-divider"> </div>
-            <Link to="/opinion">Opinion</Link>
+            <a href="/subpages?tag=Opinion">Opinion</a>
             <div className="nav-divider"> </div>
-            <Link to="/us">U.S.</Link>
+            <a href="/subpages?tag:us">U.S.</a>
             <div className="nav-divider"> </div>
-            <Link to="/data">Data</Link>
+            <a href="/subpages?tag:data">Data</a>
             <div className="nav-divider"> </div>
             <Link to="/mag">Mag</Link>
-            <div className="nav-divider"> </div>
-            <Link to="/about">About</Link>
-            <div className="nav-divider"> </div>
-            <Link to="/join">Join</Link>
             <div className="nav-divider"> </div>
           </div>
         </Router>

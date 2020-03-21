@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {useParams, withRouter, useLocation} from "react-router-dom";
+import "../pages/pages.css";
+import "./content.css";
 const contentful = require("contentful");
 
 const Content = (props) => {
@@ -13,12 +15,11 @@ const Content = (props) => {
                 accessToken: "xLxHCYuAYz3XfWCE_29SoJe9eVVHfnzTrgIuKg1sIqU"
               });
             let searchParams = new URLSearchParams(window.location.search);
-            console.log("id", searchParams.get('id'));
 
-            //let response = await client.getEntry(contentId);
-            //console.log(response.fields);
+            let response = await client.getEntry(searchParams.get('id'));
+            console.log(response.fields);
         
-            //setArticle(response.fields);
+            setArticle(response.fields);
         
             //   let asset = await client.getAsset("SwkqadbMXFiT0oKlgMwBl");
             //   console.log("cover photos", asset.fields.file.url);
@@ -29,8 +30,28 @@ const Content = (props) => {
     }, []) 
 
     return(
-        <div>
-           content
+        <div style={{marginLeft: "15%", marginRight: "20%", marginBottom: "10%"}}>
+            {
+                article != null ? (
+                    <div>
+                        <div className="title">{article.title}</div>
+                        <div className="author">By {article.authors[0]}</div>
+                        <hr/>
+                        <br/>
+                        <div>
+                            {article.articleContent.content.map((c, i) => (
+                                <div className="body">
+                                    {c.content[0].value}
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                ):(
+                    <div>
+                        <h5> loading content </h5>
+                    </div>
+                )
+            }
         </div>
     )
 }

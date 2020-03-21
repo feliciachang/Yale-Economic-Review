@@ -1,7 +1,8 @@
 .content {
   margin-top: 2%;
-  margin-left: 13%;
+  margin-left: 12%;
   margin-bottom: 10%;
+  margin-right: 8%;
 }
 
 .img-container {
@@ -28,13 +29,27 @@
 
 .img-text {
   position: absolute;
-  bottom: 12%;
-  right: 0;
-  background-color: #000;
+  bottom: -4%;
   color: #fff;
-  opacity: 80%;
-  padding-left: 20px;
-  padding-right: 30px;
+  opacity: 100%;
+  padding-right: 20%;
+}
+.img-text p{
+  font-size: 1.5vw;
+  font-weight: bold;
+  text-align: center;
+  color: black;
+  background-color: white;
+  border-radius: 0rem 2rem 2rem 0rem;
+  padding: 3px 10px 3px 5px;
+  width: 15%;
+}
+
+.img-text div{
+  right: 0;
+  font-size: 9vw;
+  font-weight: bold;
+  text-align: left;
 }
 
 /* .small-card-container{
@@ -85,6 +100,7 @@
 .dual-section{
   display: flex;
   align-items: left;
+  justify-content: space-between;
 }
 
 .small-card-container{
@@ -114,5 +130,30 @@
   grid-gap: 15px;
 }
 
+.btn-group{
+  cursor: pointer;
+  margin-bottom: 5%;
+}
 
+.btn-group button{
+  border: 1px solid black;
+  border-radius: 1rem;
+  font-size: 15px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-weight: bold;
+  margin-right: 2%;
+}
+
+
+.btn-group button:hover{
+  background-color: black;
+  color: white;
+}
+
+.btn-group button:focus {
+  outline:0;
+  border-color: blue;
+  color: blue
+}
 

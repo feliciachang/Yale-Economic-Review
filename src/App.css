@@ -43,7 +43,26 @@
 
 .sidenav {
   height: 100%; /* Full-height: remove this if you want "auto" height */
-  width: 10%; /* Set the width of the sidebar */
+  width: 7%; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  right: 0;
+  overflow: auto; /* Disable horizontal scroll */
+}
+
+.sidenav a {
+  padding: 20px 30px 8px 0px;
+  text-decoration: none;
+  font-size: 13px;
+  color: #000;
+  display: block;
+  text-align: left;
+}
+
+.leftnav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 7%; /* Set the width of the sidebar */
   position: fixed; /* Fixed Sidebar (stay in place on scroll) */
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
@@ -51,12 +70,13 @@
   overflow: auto; /* Disable horizontal scroll */
 }
 
-.sidenav a {
-  padding: 20px 10% 20px 17%;
+.leftnav a {
+  padding: 20px 0px 8px 0px;
   text-decoration: none;
   font-size: 13px;
   color: #000;
   display: block;
+  text-align: right;
 }
 
 /* @keyframes App-logo-spin {
@@ -80,4 +100,22 @@
   padding-left: 15%;
   padding-bottom: 50px;
   padding-top: 15px;
+}
+
+button{
+  border: 1px solid black;
+  border-radius: 1rem;
+  font-size: 15px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-right: 25px;
+  padding-left: 25px;
+  font-weight: bold;
+  margin-right: 2%;
+}
+
+button:focus {
+  outline:0;
+  border-color: blue;
+  color: blue
 }

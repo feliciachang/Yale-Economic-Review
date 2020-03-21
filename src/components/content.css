@@ -1,0 +1,15 @@
+.title{
+    font-size: 7vw;
+    font-weight: bold;
+    padding-top: 5%;
+}
+
+.body{
+    line-height: 1.4rem;
+    margin-bottom: 3%;
+}
+
+.author{
+    padding: 10px;
+    font-weight: bold;
+}
