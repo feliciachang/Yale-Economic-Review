@@ -19,7 +19,10 @@ function Navbar() {
             <a href="/subpages?tag=Campus">Team</a>
             <div className="nav-divider"> </div>
             <a href="/subpages?tag=Opinion">Join</a>
-            <div className="nav-divider"> </div>
+            <div style={{ 
+              flexGrow: 1,
+              borderBottom: "1px solid black"
+              }}> </div>
           </div>
           <div className="leftnav">
             <a href="#" />
@@ -31,7 +34,10 @@ function Navbar() {
             <a href="/subpages?tag=Campus">Campus</a>
             <div className="nav-divider"> </div>
             <a href="/subpages?tag=Opinion">Opinion</a>
-            <div className="nav-divider"> </div>
+            <div style={{ 
+              flexGrow: 1,
+              borderBottom: "1px solid black"
+              }}> </div>
             <a href="/subpages?tag:us">U.S.</a>
             <div className="nav-divider"> </div>
             <a href="/subpages?tag:data">Data</a>

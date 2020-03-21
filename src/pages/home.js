@@ -33,9 +33,29 @@ function Cover() {
   return (
     <div className="img-container">
       <img alt="" className="img" src={photo} />
-      <div className="img-text">
-        <p>Cover Story</p>
-        <div>{title}</div>
+      <div style={{
+          position: "absolute",
+          bottom: "-4%",
+          color: "#fff",
+          opacity: "100%",
+          paddingRight: "20%"
+      }}>
+        <div style={{
+            fontSize: "1.5vw",
+            fontWeight: "bold",
+            textAlign: "center",
+            color: "black",
+            backgroundColor: "white",
+            borderRadius: "0rem 2rem 2rem 0rem",
+            padding: "3px 10px 3px 5px",
+            width: "15%"
+        }}>Cover Story</div>
+        <div style={{
+            right: 0,
+            fontSize: "9vw",
+            fontWeight: "bold",
+            textAlign: "left"
+        }}>{title}</div>
       </div>
     </div>
   );
