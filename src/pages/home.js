@@ -41,13 +41,13 @@ function Cover() {
           paddingRight: "20%"
       }}>
         <div style={{
-            fontSize: "1.5vw",
+            fontSize: "1.3vw",
             fontWeight: "bold",
             textAlign: "center",
             color: "black",
             backgroundColor: "white",
             borderRadius: "0rem 2rem 2rem 0rem",
-            padding: "3px 10px 3px 5px",
+            padding: "3px 10px 3px 3px",
             width: "15%"
         }}>Cover Story</div>
         <div style={{

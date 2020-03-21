@@ -36,24 +36,49 @@ function Navbar() {
           </div>
           <div className="leftnav">
             <a href="#" />
-            <br />
-            <br />
-            <br />
+            <div style={{paddingBottom: "80px"}}></div>
             <a href="/">Home</a>
-            <div className="nav-divider"> </div>
+            <hr style={{
+                  display: "block",
+                  border: 0,
+                  borderTop: "1px solid #000",
+                  padding: 0,
+            }}/>  
             <a href="/subpages?tag=Campus">Campus</a>
-            <div className="nav-divider"> </div>
+            <hr style={{
+                  display: "block",
+                  border: 0,
+                  borderTop: "1px solid #000",
+                  padding: 0,
+            }}/>  
             <a href="/subpages?tag=Opinion">Opinion</a>
-            <div style={{ 
-              flexGrow: 1,
-              borderBottom: "1px solid black"
-              }}> </div>
+            <hr style={{
+                  display: "block",
+                  border: 0,
+                  borderTop: "1px solid #000",
+                  padding: 0,
+            }}/>  
             <a href="/subpages?tag:us">U.S.</a>
-            <div className="nav-divider"> </div>
+            <hr style={{
+                  display: "block",
+                  border: 0,
+                  borderTop: "1px solid #000",
+                  padding: 0,
+            }}/>  
             <a href="/subpages?tag:data">Data</a>
-            <div className="nav-divider"> </div>
+            <hr style={{
+                  display: "block",
+                  border: 0,
+                  borderTop: "1px solid #000",
+                  padding: 0,
+            }}/>  
             <Link to="/mag">Mag</Link>
-            <div className="nav-divider"> </div>
+            <hr style={{
+                  display: "block",
+                  border: 0,
+                  borderTop: "1px solid #000",
+                  padding: 0,
+            }}/>  
           </div>
         </Router>
         <div className="divided">

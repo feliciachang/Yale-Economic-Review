@@ -71,7 +71,7 @@
 }
 
 .leftnav a {
-  padding: 20px 0px 8px 0px;
+  padding: 10px 0px 0px 0px;
   text-decoration: none;
   font-size: 13px;
   color: #000;
@@ -90,14 +90,17 @@
 
 
 .footer-container {
-  height: 100px;
+  height: 220px;
   background-color: rgb(240, 240, 240);
   bottom: 0px;
   left: 0px;
   right: 0px;
 }
 .footer{
-  padding-left: 15%;
+  display: flex;
+  justify-content: space-around;
+  text-align: left;
+  align-items: left;
   padding-bottom: 50px;
   padding-top: 15px;
 }
