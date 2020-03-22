@@ -52,13 +52,13 @@ const SubPages = () => {
             <div className="section">
             <div className="small-card-container">
               {campusContent.map((article, i) => (
-                <div onClick = {() => goToArticle(article.sys.id)} key={i} style={{gridColumnStart: i+1, gridColumnEnd: i+2}}>
+                <div onClick ={()=>goToArticle(article.sys.id)} key={i} style={{gridColumnStart: i+1, gridColumnEnd: i+2, border: "1px solid black", opacity: "100%"}}>
                   <div className="small-img">
-                  <img className="small-card-img" src={asset}/>
+                  <img alt="" className="small-card-img" src={asset}/>
                   </div>
-                  <div style={{padding: "20px", paddingBottom: "0px", fontSize: "20px", fontWeight: "bold"}}>{article.fields.title}</div>
-                  <div style={{ padding: "10px 20px 20px 20px"}}>By {article.fields.authors[0]}</div>
-              </div>
+                  <div style={{color: "#000", padding: "20px", paddingBottom: "0px", fontSize: "20px", fontWeight: "bold"}}>{article.fields.title}</div>
+                  <div style={{color: "#000", padding: "10px 20px 20px 20px"}}>By {article.fields.authors[0]}</div>
+                </div>
               ))}
             </div> 
             </div>
