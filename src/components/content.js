@@ -36,7 +36,7 @@ const Content = (props) => {
                     <div>
                         <div className="title">{article.title}</div>
                         <div className="author">By {article.authors[0]}</div>
-                        <hr/>
+                        <br/>
                         <br/>
                         <div>
                             {article.articleContent.content.map((c, i) => (
