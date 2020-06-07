@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 
-import logo from "./logo.svg";
+import logo from "./yer.svg";
 import "./App.css";
 
 function Navbar() {
@@ -12,30 +12,36 @@ function Navbar() {
           <div className="sidenav">
             <a href="#" />
             <div style={{ paddingBottom: "80px" }}></div>
-            <a href="/">About</a>
+            <a href="/" style={{ color: "#2C2C2C" }}>
+              About
+            </a>
             <hr
               style={{
                 display: "block",
                 border: 0,
-                borderTop: "1px solid #000",
+                borderTop: "1px solid rgb(240, 240, 240)",
                 padding: 0,
               }}
             />
-            <a href="/subpages?tag=Campus">Team</a>
+            <a href="/subpages?tag=Campus" style={{ color: "#2C2C2C" }}>
+              Team
+            </a>
             <hr
               style={{
                 display: "block",
                 border: 0,
-                borderTop: "1px solid #000",
+                borderTop: "1px solid rgb(240, 240, 240)",
                 padding: 0,
               }}
             />
-            <a href="/subpages?tag=Opinion">Join</a>
+            <a href="/subpages?tag=Opinion" style={{ color: "#2C2C2C" }}>
+              Join
+            </a>
             <hr
               style={{
                 display: "block",
                 border: 0,
-                borderTop: "1px solid #000",
+                borderTop: "1px solid rgb(240, 240, 240)",
                 padding: 0,
               }}
             />
@@ -43,48 +49,58 @@ function Navbar() {
           <div className="leftnav">
             <a href="#" />
             <div style={{ paddingBottom: "80px" }}></div>
-            <a href="/">Home</a>
+            <a href="/" style={{ color: "#2C2C2C" }}>
+              Home
+            </a>
             <hr
               style={{
                 display: "block",
                 border: 0,
-                borderTop: "1px solid #000",
+                borderTop: "1px solid rgb(240, 240, 240)",
                 padding: 0,
               }}
             />
-            <a href="/subpages?tag=Campus">Campus</a>
+            <a href="/subpages?tag=Campus" style={{ color: "#2C2C2C" }}>
+              Campus
+            </a>
             <hr
               style={{
                 display: "block",
                 border: 0,
-                borderTop: "1px solid #000",
+                borderTop: "1px solid rgb(240, 240, 240)",
                 padding: 0,
               }}
             />
-            <a href="/subpages?tag=Opinion">Opinion</a>
+            <a href="/subpages?tag=Opinion" style={{ color: "#2C2C2C" }}>
+              Opinion
+            </a>
             <hr
               style={{
                 display: "block",
                 border: 0,
-                borderTop: "1px solid #000",
+                borderTop: "1px solid rgb(240, 240, 240)",
                 padding: 0,
               }}
             />
-            <a href="/subpages?tag:us">U.S.</a>
+            <a href="/subpages?tag:us" style={{ color: "#2C2C2C" }}>
+              U.S.
+            </a>
             <hr
               style={{
                 display: "block",
                 border: 0,
-                borderTop: "1px solid #000",
+                borderTop: "1px solid rgb(240, 240, 240)",
                 padding: 0,
               }}
             />
-            <a href="/mag">Mag</a>
+            <a href="/mag" style={{ color: "#2C2C2C" }}>
+              Mag
+            </a>
             <hr
               style={{
                 display: "block",
                 border: 0,
-                borderTop: "1px solid #000",
+                borderTop: "1px solid rgb(240, 240, 240)",
                 padding: 0,
               }}
             />

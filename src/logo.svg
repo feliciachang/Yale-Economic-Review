@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="524" height="395" viewBox="0 0 524 395">
+<svg xmlns="http://www.w3.org/2000/svg" width="524" height="395" color="#0f4d92" viewBox="0 0 524 395">
   <g id="Group_16" data-name="Group 16" transform="translate(-4704 -954)">
     <text id="Yale_Economic_Review" data-name="Yale
 Economic
-Review" transform="translate(4704 954)" font-size="130" font-family="GillSans, Gill Sans"><tspan x="0" y="119">Yale </tspan><tspan x="0" y="239">Economic</tspan><tspan x="0" y="359">Review</tspan></text>
-    <rect id="Rectangle_126" data-name="Rectangle 126" width="11" height="36" transform="translate(4740.5 1061.5) rotate(90)"/>
-    <rect id="Rectangle_127" data-name="Rectangle 127" width="11" height="36" transform="translate(5069.5 1265.5) rotate(-90)"/>
+Review" transform="translate(4704 954)" font-size="130" color="#0f4d92" font-family="GillSans, Gill Sans"><tspan x="0" y="119">Yale </tspan><tspan x="0" y="239">Economic</tspan><tspan x="0" y="359">Review</tspan></text>
+    <rect id="Rectangle_126" data-name="Rectangle 126" color="#0f4d92" width="11" height="36" transform="translate(4740.5 1061.5) rotate(90)"/>
+    <rect id="Rectangle_127" data-name="Rectangle 127" color="#0f4d92" width="11" height="36" transform="translate(5069.5 1265.5) rotate(-90)"/>
   </g>
 </svg>

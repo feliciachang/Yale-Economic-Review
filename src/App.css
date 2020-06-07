@@ -1,3 +1,13 @@
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #2c2c2c;
+}
+
 .App {
   margin-top: 20px;
 }
@@ -29,12 +39,12 @@
 
 .divider {
   flex-grow: 1;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid #0f4d92;
 }
 
 .nav-divider {
   flex-grow: 1;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #0f4d92;
 }
 
 .App-link {
@@ -88,15 +98,14 @@
   }
 } */
 
-
 .footer-container {
   height: 220px;
-  background-color: rgb(240, 240, 240);
+  background-color: #0f4d92;
   bottom: 0px;
   left: 0px;
   right: 0px;
 }
-.footer{
+.footer {
   display: flex;
   justify-content: space-around;
   text-align: left;
@@ -104,7 +113,7 @@
   padding-top: 15px;
 }
 
-button{
+button {
   border: 1px solid black;
   border-radius: 1rem;
   font-size: 15px;
@@ -117,7 +126,7 @@ button{
 }
 
 button:focus {
-  outline:0;
+  outline: 0;
   border-color: blue;
-  color: blue
+  color: blue;
 }

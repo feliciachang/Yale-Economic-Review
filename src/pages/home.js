@@ -125,8 +125,7 @@ function Mag() {
               style={{
                 gridColumnStart: i + 1,
                 gridColumnEnd: i + 2,
-                backgroundColor: "#000",
-                opacity: "90%",
+                backgroundColor: "rgb(240, 240, 240)",
               }}
             >
               <div className="small-img">
@@ -138,7 +137,7 @@ function Mag() {
               </div>
               <div
                 style={{
-                  color: "#FFF",
+                  color: "#000",
                   padding: "20px",
                   paddingBottom: "0px",
                   fontSize: "20px",
@@ -147,7 +146,7 @@ function Mag() {
               >
                 {article.fields.title}
               </div>
-              <div style={{ color: "#FFF", padding: "10px 20px 20px 20px" }}>
+              <div style={{ color: "#000", padding: "10px 20px 20px 20px" }}>
                 By {article.fields.authors[0]}
               </div>
             </div>
@@ -225,7 +224,7 @@ function ToggleSubjects() {
               style={{
                 gridColumnStart: i + 1,
                 gridColumnEnd: i + 2,
-                border: "1px solid black",
+                border: "1px solid rgb(240, 240, 240)",
                 opacity: "100%",
               }}
             >
@@ -331,7 +330,7 @@ function VerticalContent() {
               {magContent.map((article, i) => (
                 <div key={i} style={{ gridRowStart: i + 1, gridRowEnd: i + 2 }}>
                   <div className="small-img">
-                    <img alt="" className="small-card-img" src={asset} />
+                    <img alt="" className="img" src={asset} />
                   </div>
                   <div
                     style={{
@@ -359,17 +358,21 @@ function Home() {
     <div className="content">
       <Cover />
       <br />
-      <div className="section-divider" />
+      <br />
       <br />
       <Mag />
       <br />
+      <br />
       <div className="section-divider" />
+      <br />
       <br />
       <ToggleSubjects />
       <br />
       <br />
       <br />
+      <br />
       <SignUp />
+      <br />
       <br />
     </div>
   );
