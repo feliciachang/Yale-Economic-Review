@@ -10,6 +10,7 @@ import Footer from "./components/footer.js";
 import Home from "./pages/home";
 import SubPages from "./pages/subpages";
 import Content from "./components/content";
+import Mag from "./pages/mag";
 
 // import { useEffect }
 
@@ -20,7 +21,8 @@ function App() {
       <Router>
         <Route path="/" exact component={Home} />
         <Route path="/subpages" exact component={SubPages} />
-        <Route path="/content/:id" exact component={Content}/>
+        <Route path="/content/:id" exact component={Content} />
+        <Route path="/mag" exact component={Mag} />
       </Router>
       <Footer />
     </div>
