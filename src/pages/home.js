@@ -47,6 +47,7 @@ function Cover() {
               color: "#fff",
               opacity: "100%",
               paddingRight: "20%",
+              cursor: "pointer",
             }}
           >
             <div
@@ -126,6 +127,7 @@ function Mag() {
                 gridColumnStart: i + 1,
                 gridColumnEnd: i + 2,
                 backgroundColor: "rgb(240, 240, 240)",
+                cursor: "pointer",
               }}
             >
               <div className="small-img">

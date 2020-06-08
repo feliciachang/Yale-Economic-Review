@@ -100,11 +100,12 @@ h6 {
 
 .footer-container {
   height: 220px;
-  background-color: #0f4d92;
+  background-color: rgb(240, 240, 240);
   bottom: 0px;
   left: 0px;
   right: 0px;
 }
+
 .footer {
   display: flex;
   justify-content: space-around;

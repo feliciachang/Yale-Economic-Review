@@ -12,7 +12,7 @@ function Navbar() {
           <div className="sidenav">
             <a href="#" />
             <div style={{ paddingBottom: "80px" }}></div>
-            <a href="/" style={{ color: "#2C2C2C" }}>
+            <a href="/about" style={{ color: "#2C2C2C" }}>
               About
             </a>
             <hr
@@ -23,7 +23,7 @@ function Navbar() {
                 padding: 0,
               }}
             />
-            <a href="/subpages?tag=Campus" style={{ color: "#2C2C2C" }}>
+            <a href="/team" style={{ color: "#2C2C2C" }}>
               Team
             </a>
             <hr
@@ -34,8 +34,8 @@ function Navbar() {
                 padding: 0,
               }}
             />
-            <a href="/subpages?tag=Opinion" style={{ color: "#2C2C2C" }}>
-              Join
+            <a href="/submit" style={{ color: "#2C2C2C" }}>
+              Submit
             </a>
             <hr
               style={{
