@@ -91,6 +91,12 @@ h6 {
   overflow: hidden;
 }
 
+@media screen and (max-width: 800px) {
+  .small-img {
+    width: 300px;
+  }
+}
+
 /* .small-img {
   position: absolute;
   top: 50%;
@@ -117,6 +123,36 @@ h6 {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 15px;
   grid-auto-rows: minmax(100px, auto);
+}
+
+.card-text {
+  color: #000;
+  padding: 20px;
+  padding-bottom: 0px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.card-author {
+  color: #000;
+  padding: 10px 20px 20px 20px;
+}
+
+@media screen and (max-width: 800px) {
+  .small-card-container {
+    display: flex;
+    min-width: 300px;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 800px) {
+  .card-text {
+    min-width: 300px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .card-author {
+    min-width: 300px;
+  }
 }
 
 .left-side-container {

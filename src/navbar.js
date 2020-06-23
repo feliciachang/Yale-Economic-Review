@@ -82,8 +82,19 @@ function Navbar() {
                 padding: 0,
               }}
             />
-            <a href="/subpages?tag:us" style={{ color: "#2C2C2C" }}>
+            <a href="/subpages?tag=US" style={{ color: "#2C2C2C" }}>
               U.S.
+            </a>
+            <hr
+              style={{
+                display: "block",
+                border: 0,
+                borderTop: "1px solid rgb(240, 240, 240)",
+                padding: 0,
+              }}
+            />
+            <a href="/subpages?tag=World" style={{ color: "#2C2C2C" }}>
+              World
             </a>
             <hr
               style={{

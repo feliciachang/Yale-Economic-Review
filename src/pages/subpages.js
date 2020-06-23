@@ -16,7 +16,6 @@ const SubPages = () => {
       });
 
       let searchParams = new URLSearchParams(window.location.search);
-
       console.log(searchParams.get("tag"));
 
       let response = await client.getEntries({
@@ -63,22 +62,14 @@ const SubPages = () => {
                     }}
                   >
                     <div className="small-img">
-                      <img alt="" className="small-card-img" src={asset} />
+                      <img
+                        alt=""
+                        className="small-card-img"
+                        src={article.fields.featuredPhoto.fields.file.url}
+                      />
                     </div>
-                    <div
-                      style={{
-                        color: "#000",
-                        padding: "20px",
-                        paddingBottom: "0px",
-                        fontSize: "20px",
-                        fontWeight: "bold",
-                      }}
-                    >
-                      {article.fields.title}
-                    </div>
-                    <div
-                      style={{ color: "#000", padding: "10px 20px 20px 20px" }}
-                    >
+                    <div className="card-text">{article.fields.title}</div>
+                    <div className="card-author">
                       By {article.fields.authors[0]}
                     </div>
                   </div>

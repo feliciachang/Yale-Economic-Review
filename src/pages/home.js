@@ -128,6 +128,7 @@ function Mag() {
                 gridColumnEnd: i + 2,
                 backgroundColor: "rgb(240, 240, 240)",
                 cursor: "pointer",
+                marginBottom: "20px",
               }}
             >
               <div className="small-img">
