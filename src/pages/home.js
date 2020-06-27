@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useHistory, withRouter } from "react-router-dom";
 import "./pages.css";
 import SignUp from "../components/signup.js";
+import styled from "styled-components";
 const contentful = require("contentful");
 
 function Cover() {
@@ -83,6 +84,32 @@ function Cover() {
   );
 }
 
+const ImgContainer = styled.div`
+  width: 100%;
+`;
+
+const Img = styled.img`
+  height: 200px;
+  overflow: hidden;
+`;
+
+const Title = styled.div`
+  font-size: 20px;
+  font-weight: bold;
+  word-wrap: break-word;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+`;
+
+const Subtitle = styled.div`
+  padding-top: 10px;
+  font-size: 12px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+`;
+
 function Mag() {
   const [magContent, setMagContent] = useState([]);
   const [asset, setAsset] = useState("");
@@ -118,40 +145,22 @@ function Mag() {
     return (
       <div className="section">
         <h1>Highlights </h1>
-        <div className="small-card-container">
+        <div className="cards">
           {magContent.map((article, i) => (
             <div
+              className="card"
               onClick={() => goToArticle(article.sys.id)}
               key={i}
-              style={{
-                gridColumnStart: i + 1,
-                gridColumnEnd: i + 2,
-                backgroundColor: "rgb(240, 240, 240)",
-                cursor: "pointer",
-                marginBottom: "20px",
-              }}
             >
-              <div className="small-img">
-                <img
+              <ImgContainer>
+                <Img
                   alt=""
                   className="small-card-img"
                   src={article.fields.featuredPhoto.fields.file.url}
                 />
-              </div>
-              <div
-                style={{
-                  color: "#000",
-                  padding: "20px",
-                  paddingBottom: "0px",
-                  fontSize: "20px",
-                  fontWeight: "bold",
-                }}
-              >
-                {article.fields.title}
-              </div>
-              <div style={{ color: "#000", padding: "10px 20px 20px 20px" }}>
-                By {article.fields.authors[0]}
-              </div>
+              </ImgContainer>
+              <Title>{article.fields.title}</Title>
+              <Subtitle>By {article.fields.authors[0]}</Subtitle>
             </div>
           ))}
         </div>
@@ -219,35 +228,22 @@ function ToggleSubjects() {
             U.S.
           </button>
         </div>
-        <div className="small-card-container">
+        <div className="cards">
           {magContent.map((article, i) => (
             <div
+              className="card2"
               onClick={() => goToArticle(article.sys.id)}
               key={i}
-              style={{
-                gridColumnStart: i + 1,
-                gridColumnEnd: i + 2,
-                border: "1px solid rgb(240, 240, 240)",
-                opacity: "100%",
-              }}
             >
-              <div className="small-img">
-                <img alt="" className="small-card-img" src={asset} />
-              </div>
-              <div
-                style={{
-                  color: "#000",
-                  padding: "20px",
-                  paddingBottom: "0px",
-                  fontSize: "20px",
-                  fontWeight: "bold",
-                }}
-              >
-                {article.fields.title}
-              </div>
-              <div style={{ color: "#000", padding: "10px 20px 20px 20px" }}>
-                By {article.fields.authors[0]}
-              </div>
+              <ImgContainer>
+                <Img
+                  alt=""
+                  className="small-card-img"
+                  src={article.fields.featuredPhoto.fields.file.url}
+                />
+              </ImgContainer>
+              <Title>{article.fields.title}</Title>
+              <Subtitle>By {article.fields.authors[0]}</Subtitle>
             </div>
           ))}
         </div>

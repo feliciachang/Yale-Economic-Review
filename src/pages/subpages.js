@@ -1,7 +1,34 @@
 import React, { useState, useEffect } from "react";
 import { useHistory, withRouter } from "react-router-dom";
 import "./pages.css";
+import styled from "styled-components";
 const contentful = require("contentful");
+
+const ImgContainer = styled.div`
+  width: 100%;
+`;
+
+const Img = styled.img`
+  height: 200px;
+  overflow: hidden;
+`;
+
+const Title = styled.div`
+  font-size: 20px;
+  font-weight: bold;
+  word-wrap: break-word;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+`;
+
+const Subtitle = styled.div`
+  padding-top: 10px;
+  font-size: 12px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+`;
 
 const SubPages = () => {
   const [campusContent, setCampusContent] = useState([]);
@@ -48,30 +75,22 @@ const SubPages = () => {
         <div>
           <div className="content">
             <div className="section">
-              <div className="small-card-container">
+              <div className="cards">
                 {campusContent.map((article, i) => (
                   <div
+                    className="card2"
                     onClick={() => goToArticle(article.sys.id)}
                     key={i}
-                    style={{
-                      gridColumnStart: i + 1,
-                      gridColumnEnd: i + 2,
-                      border: "1px solid rgb(240, 240, 240)",
-                      opacity: "100%",
-                      cursor: "pointer",
-                    }}
                   >
-                    <div className="small-img">
-                      <img
+                    <ImgContainer>
+                      <Img
                         alt=""
                         className="small-card-img"
                         src={article.fields.featuredPhoto.fields.file.url}
                       />
-                    </div>
-                    <div className="card-text">{article.fields.title}</div>
-                    <div className="card-author">
-                      By {article.fields.authors[0]}
-                    </div>
+                    </ImgContainer>
+                    <Title>{article.fields.title}</Title>
+                    <Subtitle>By {article.fields.authors[0]}</Subtitle>
                   </div>
                 ))}
               </div>
