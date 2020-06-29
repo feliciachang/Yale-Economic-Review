@@ -17,6 +17,10 @@ import Submit from "./pages/submit";
 
 // import { useEffect }
 
+import ReactGA from "react-ga";
+ReactGA.initialize("UA-171070849-1");
+ReactGA.pageview(window.location.pathname + window.location.search);
+
 function App() {
   return (
     <div className="App">
