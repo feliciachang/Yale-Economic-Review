@@ -9,44 +9,9 @@ function Navbar() {
     <div className="App">
       <div className="App-header">
         <Router>
-          <div className="sidenav">
-            <a href="#" />
-            <div style={{ paddingBottom: "80px" }}></div>
-            <a href="/about" style={{ color: "#2C2C2C" }}>
-              About
-            </a>
-            <hr
-              style={{
-                display: "block",
-                border: 0,
-                borderTop: "1px solid rgb(240, 240, 240)",
-                padding: 0,
-              }}
-            />
-            <a href="/team" style={{ color: "#2C2C2C" }}>
-              Team
-            </a>
-            <hr
-              style={{
-                display: "block",
-                border: 0,
-                borderTop: "1px solid rgb(240, 240, 240)",
-                padding: 0,
-              }}
-            />
-            <a href="/submit" style={{ color: "#2C2C2C" }}>
-              Submit
-            </a>
-            <hr
-              style={{
-                display: "block",
-                border: 0,
-                borderTop: "1px solid rgb(240, 240, 240)",
-                padding: 0,
-              }}
-            />
-          </div>
           <div className="leftnav">
+            <a href="#" />
+            <a href="#" />
             <a href="#" />
             <div style={{ paddingBottom: "80px" }}></div>
             <a href="/" style={{ color: "#2C2C2C" }}>
@@ -104,8 +69,52 @@ function Navbar() {
                 padding: 0,
               }}
             />
+            <a href="/subpages?tag=Business" style={{ color: "#2C2C2C" }}>
+              Business
+            </a>
+            <hr
+              style={{
+                display: "block",
+                border: 0,
+                borderTop: "1px solid rgb(240, 240, 240)",
+                padding: 0,
+              }}
+            />
             <a href="/mag" style={{ color: "#2C2C2C" }}>
               Mag
+            </a>
+            <hr
+              style={{
+                display: "block",
+                border: 0,
+                borderTop: "1px solid rgb(240, 240, 240)",
+                padding: 0,
+              }}
+            />
+            <a href="/about" style={{ color: "#2C2C2C" }}>
+              About
+            </a>
+            <hr
+              style={{
+                display: "block",
+                border: 0,
+                borderTop: "1px solid rgb(240, 240, 240)",
+                padding: 0,
+              }}
+            />
+            <a href="/team" style={{ color: "#2C2C2C" }}>
+              Team
+            </a>
+            <hr
+              style={{
+                display: "block",
+                border: 0,
+                borderTop: "1px solid rgb(240, 240, 240)",
+                padding: 0,
+              }}
+            />
+            <a href="/submit" style={{ color: "#2C2C2C" }}>
+              Submit
             </a>
             <hr
               style={{

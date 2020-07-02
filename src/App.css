@@ -72,10 +72,10 @@ h6 {
 
 .leftnav {
   height: 100%; /* Full-height: remove this if you want "auto" height */
-  width: 7%; /* Set the width of the sidebar */
+  width: 10%; /* Set the width of the sidebar */
   position: fixed; /* Fixed Sidebar (stay in place on scroll) */
   z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
+  top: 1; /* Stay at the top */
   left: 0;
   overflow: auto; /* Disable horizontal scroll */
 }
@@ -87,6 +87,22 @@ h6 {
   color: #000;
   display: block;
   text-align: right;
+}
+
+/* .leftnavsub {
+  display: none;
+} */
+
+@media screen and (max-width: 600px) {
+  .leftnav {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 70px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    overflow: auto; /* Disable horizontal scroll */
+  }
 }
 
 /* @keyframes App-logo-spin {

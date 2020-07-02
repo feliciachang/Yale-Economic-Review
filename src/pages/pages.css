@@ -35,9 +35,18 @@ h6 {
 
 .content {
   margin-top: 2%;
-  margin-left: 12%;
+  margin-left: 14vw;
   margin-bottom: 10%;
-  margin-right: 8%;
+  margin-right: 5%;
+}
+
+@media screen and (max-width: 600px) {
+  .content {
+    margin-top: 2%;
+    margin-left: 16vw;
+    margin-bottom: 10%;
+    margin-right: 3%;
+  }
 }
 
 .img-container {
