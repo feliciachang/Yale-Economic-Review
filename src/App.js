@@ -14,6 +14,7 @@ import Mag from "./pages/mag";
 import About from "./pages/about";
 import Team from "./pages/team";
 import Submit from "./pages/submit";
+import Search from "./pages/search";
 
 // import { useEffect }
 
@@ -33,6 +34,7 @@ function App() {
         <Route path="/about" exact component={About} />
         <Route path="/team" exact component={Team} />
         <Route path="/submit" exact component={Submit} />
+        <Route path="/search" exact component={Search} />
       </Router>
       <Footer />
     </div>

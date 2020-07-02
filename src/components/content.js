@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, withRouter, useLocation } from "react-router-dom";
 import "../pages/pages.css";
 import "./content.css";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 const contentful = require("contentful");
 
 const Content = (props) => {
@@ -41,6 +42,7 @@ const Content = (props) => {
           <div>
             {article.articleContent.content.map((c, i) => (
               <div
+                key={i}
                 className="body"
                 dangerouslySetInnerHTML={{ __html: c.content[0].value }}
               />
