@@ -36,7 +36,9 @@ const Content = (props) => {
   }, []);
 
   return (
-    <div style={{ marginLeft: "15%", marginRight: "20%", marginBottom: "10%" }}>
+    <div
+      style={{ marginLeft: "20vw", marginRight: "10%", marginBottom: "10%" }}
+    >
       {article != null ? (
         <div>
           <div className="title">{article.title}</div>
