@@ -64,9 +64,9 @@ const Search = (props) => {
     let response = await client.getEntries({
       query: query,
     });
-    console.log(response.fields);
+    console.log(response.items);
 
-    setSearchContent(response.fields);
+    setSearchContent(response.items);
 
     //   let asset = await client.getAsset("SwkqadbMXFiT0oKlgMwBl");
     //   console.log("cover photos", asset.fields.file.url);
@@ -82,8 +82,8 @@ const Search = (props) => {
   };
 
   return (
-    <>
-      <div className="content">
+    <div className="content">
+      <div>
         <H3>Search for an article:</H3>
         <br />
         <div style={{ display: "flex", alignItems: "center" }}>
@@ -100,17 +100,17 @@ const Search = (props) => {
       {searchContent != null ? (
         <div>
           {searchContent.map((b, i) => (
-            <SearchResult onClick={() => goToArticle(b.id)}>
-              <div>{searchContent.fields.title}</div>
-              <div>By {searchContent.fields.authors[0]}</div>
+            <SearchResult key={i} onClick={() => goToArticle(b.sys.id)}>
+              <div>{b.fields.title}</div>
+              <div>By {b.fields.authors[0]}</div>
               <hr />
             </SearchResult>
           ))}
         </div>
       ) : (
-        <div>no results</div>
+        <div style={{ marginBottom: "40%" }}>no results yet</div>
       )}
-    </>
+    </div>
   );
 };
 

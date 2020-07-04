@@ -7,6 +7,7 @@ const contentful = require("contentful");
 
 const Content = (props) => {
   const [article, setArticle] = useState(null);
+  const [richText, setRichText] = useState(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -17,8 +18,12 @@ const Content = (props) => {
       });
       let searchParams = new URLSearchParams(window.location.search);
 
+      console.log(searchParams.get("id"));
       let response = await client.getEntry(searchParams.get("id"));
       console.log(response.fields);
+
+      let richText = documentToHtmlString(response.fields.articleContent);
+      setRichText(richText);
 
       setArticle(response.fields);
 
@@ -40,13 +45,10 @@ const Content = (props) => {
           <br />
           <br />
           <div>
-            {article.articleContent.content.map((c, i) => (
-              <div
-                key={i}
-                className="body"
-                dangerouslySetInnerHTML={{ __html: c.content[0].value }}
-              />
-            ))}
+            <div
+              className="body"
+              dangerouslySetInnerHTML={{ __html: richText }}
+            />
           </div>
         </div>
       ) : (
