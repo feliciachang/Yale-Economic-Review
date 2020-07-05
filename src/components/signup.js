@@ -94,7 +94,6 @@ class SignUp extends Component {
               border: "1px solid black",
               borderRadius: "50px",
               fontWeight: "bold",
-              fontFamily: "Gill Sans",
             }}
             href="https://mailchi.mp/1649f471e01f/the-yale-economic-review"
           >

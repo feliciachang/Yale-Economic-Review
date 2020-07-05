@@ -69,10 +69,9 @@ function Cover() {
             <div
               style={{
                 right: 0,
-                fontSize: "8vw",
+                fontSize: "9vw",
                 fontWeight: "bold",
                 textAlign: "left",
-                fontFamily: "Gill Sans",
                 paddingLeft: "10px",
               }}
             >
@@ -100,17 +99,16 @@ const Title = styled.div`
   font-size: 18px;
   font-weight: bold;
   word-wrap: break-word;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 15px;
+  margin-right: 15px;
   margin-top: 10px;
-  font-family: "Libre Baskerville";
 `;
 
 const Subtitle = styled.div`
   padding-top: 10px;
   font-size: 13px;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 15px;
+  margin-right: 15px;
   margin-bottom: 20px;
   font-family: "Gill Sans";
 `;
