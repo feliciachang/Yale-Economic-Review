@@ -66,17 +66,7 @@ function Cover() {
             >
               Cover Story
             </div>
-            <div
-              style={{
-                right: 0,
-                fontSize: "9vw",
-                fontWeight: "bold",
-                textAlign: "left",
-                paddingLeft: "10px",
-              }}
-            >
-              {cover.fields.title}
-            </div>
+            <div className="photoTitle">{cover.fields.title}</div>
           </div>
         </div>
       ) : (

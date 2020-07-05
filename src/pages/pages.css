@@ -10,6 +10,22 @@ h6 {
   font-weight: normal;
 }
 
+.photoTitle {
+  right: 0;
+  font-size: 9vw;
+  font-weight: bold;
+  text-align: left;
+}
+
+@media screen and (max-width: 600px) {
+  .photoTitle {
+    right: 0;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: left;
+  }
+}
+
 .cards {
   margin: 0 auto;
   display: grid;
@@ -49,9 +65,9 @@ h6 {
 @media screen and (max-width: 600px) {
   .content {
     margin-top: 2%;
-    margin-left: 18vw;
+    margin-left: 23vw;
     margin-bottom: 10%;
-    margin-right: 2%;
+    margin-right: 0.1%;
   }
 }
 
