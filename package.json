@@ -10,6 +10,7 @@
     "axios": "^0.19.2",
     "contentful": "^7.14.5",
     "next": "^9.3.0",
+    "normalize.css": "^8.0.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-ga": "^3.0.0",

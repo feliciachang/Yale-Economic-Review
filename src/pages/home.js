@@ -44,7 +44,7 @@ function Cover() {
           <div
             style={{
               position: "absolute",
-              bottom: "-4%",
+              bottom: "-2%",
               color: "#fff",
               opacity: "100%",
               paddingRight: "20%",
@@ -61,6 +61,7 @@ function Cover() {
                 borderRadius: "0rem 2rem 2rem 0rem",
                 padding: "3px 10px 3px 3px",
                 width: "15%",
+                fontFamily: "Gill Sans",
               }}
             >
               Cover Story
@@ -68,9 +69,11 @@ function Cover() {
             <div
               style={{
                 right: 0,
-                fontSize: "9vw",
+                fontSize: "8vw",
                 fontWeight: "bold",
                 textAlign: "left",
+                fontFamily: "Gill Sans",
+                paddingLeft: "10px",
               }}
             >
               {cover.fields.title}
@@ -94,20 +97,22 @@ const Img = styled.img`
 `;
 
 const Title = styled.div`
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   word-wrap: break-word;
   margin-left: 10px;
   margin-right: 10px;
   margin-top: 10px;
+  font-family: "Libre Baskerville";
 `;
 
 const Subtitle = styled.div`
   padding-top: 10px;
-  font-size: 12px;
+  font-size: 13px;
   margin-left: 10px;
   margin-right: 10px;
   margin-bottom: 20px;
+  font-family: "Gill Sans";
 `;
 
 function Mag() {
@@ -144,7 +149,9 @@ function Mag() {
   if (magContent != null) {
     return (
       <div className="section">
-        <h1>Highlights </h1>
+        <h2>HIGHLIGHTS </h2>
+        <hr />
+        <br />
         <div className="cards">
           {magContent.map((article, i) => (
             <div
@@ -210,23 +217,13 @@ function ToggleSubjects() {
   if (magContent != null) {
     return (
       <div className="section">
-        <h1>More From </h1>
+        <h2>MORE FROM</h2>
+        <hr />
+        <br />
         <div className="btn-group" style={{ width: "100%" }}>
-          <button
-            onClick={() => setContentType("Campus")}
-            style={{ width: "15%" }}
-          >
-            Campus
-          </button>
-          <button
-            onClick={() => setContentType("Opinion")}
-            style={{ width: "15%" }}
-          >
-            Opinion
-          </button>
-          <button onClick={() => setContentType("us")} style={{ width: "15%" }}>
-            U.S.
-          </button>
+          <button onClick={() => setContentType("Campus")}>Campus</button>
+          <button onClick={() => setContentType("Opinion")}>Opinion</button>
+          <button onClick={() => setContentType("us")}>U.S.</button>
         </div>
         <div className="cards">
           {magContent.map((article, i) => (
@@ -362,7 +359,6 @@ function Home() {
       <Mag />
       <br />
       <br />
-      <div className="section-divider" />
       <br />
       <br />
       <ToggleSubjects />

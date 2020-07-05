@@ -83,14 +83,15 @@ h6 {
 .leftnav a {
   padding: 10px 0px 0px 0px;
   text-decoration: none;
-  font-size: 13px;
-  color: #000;
+  font-size: 15px;
+  color: rgb(44, 44, 44);
   display: block;
   text-align: right;
+  font-family: Gill Sans;
 }
 
-/* .leftnavsub {
-  display: none;
+/* .leftnav a:hover {
+  color: #0f4d92;
 } */
 
 @media screen and (max-width: 600px) {
@@ -104,15 +105,6 @@ h6 {
     overflow: auto; /* Disable horizontal scroll */
   }
 }
-
-/* @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
 
 .footer-container {
   height: 220px;

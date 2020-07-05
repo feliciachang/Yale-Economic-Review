@@ -6,6 +6,8 @@ h4,
 h5,
 h6 {
   color: #2c2c2c;
+  font-family: "Gill Sans";
+  font-weight: normal;
 }
 
 .cards {
@@ -16,20 +18,24 @@ h6 {
 
 .card {
   background-color: rgb(240, 240, 240);
+  cursor: pointer;
 }
 
 .card2 {
   border: 1px solid rgb(240, 240, 240);
+  cursor: pointer;
 }
 
 @media screen and (min-width: 600px) {
   .cards {
     grid-template-columns: repeat(2, 1fr);
+    cursor: pointer;
   }
 }
 @media (min-width: 900px) {
   .cards {
     grid-template-columns: repeat(3, 1fr);
+    cursor: pointer;
   }
 }
 
@@ -218,6 +224,7 @@ h6 {
   font-weight: bold;
   margin-right: 2%;
   background-color: #fff;
+  font-family: "Gill Sans";
 }
 
 .btn-group button:hover {

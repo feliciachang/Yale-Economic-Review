@@ -2,11 +2,14 @@
   font-size: 45px;
   font-weight: bold;
   padding-top: 5%;
+  font-family: "Libre Baskerville";
 }
 
 .subtitle {
   font-size: 30px;
   padding-bottom: 40px;
+  font-weight: normal;
+  font-family: "Gill Sans";
 }
 
 .body {
@@ -16,5 +19,5 @@
 
 .author {
   padding-top: 20px;
-  font-weight: bold;
+  font-family: "Gill Sans";
 }

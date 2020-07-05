@@ -37,7 +37,11 @@ const Content = (props) => {
 
   return (
     <div
-      style={{ marginLeft: "20vw", marginRight: "10%", marginBottom: "10%" }}
+      style={{
+        marginLeft: "25vw",
+        marginBottom: "10%",
+        width: "50vw",
+      }}
     >
       {article != null ? (
         <div>
