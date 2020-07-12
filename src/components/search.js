@@ -10,17 +10,14 @@ import styled from "styled-components";
 const contentful = require("contentful");
 
 const Container = styled.div`
-  margin: 5%;
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
 
 const Input = styled.input`
-  min-width: 40vw;
   border: 1px solid #bdbdbd;
-  border-radius: 5px;
-  padding-left: 5px;
+  border-radius: 5px 0px 0px 5px;
   padding: 10px;
 `;
 
@@ -33,12 +30,9 @@ const Button = styled.button`
   font-weight: normal;
   background-color: #bdbdbd;
   border: 1px solid white;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-radius: 5px;
-  margin: 3%;
+  border-radius: 0px 5px 5px 0px;
+  padding: 10px;
+  margin-left: -1px;
 `;
 
 const SearchResult = styled.div`
@@ -60,12 +54,9 @@ const Search = (props) => {
       space: "obm5e8rm0eay",
       accessToken: "xLxHCYuAYz3XfWCE_29SoJe9eVVHfnzTrgIuKg1sIqU",
     });
-    let searchParams = new URLSearchParams(window.location.search);
-
-    console.log(searchParams.get("id"));
-
+    console.log(query);
     let response = await client.getEntries({
-      query: searchParams.get("id"),
+      query: query,
     });
     console.log(response.items);
 
@@ -76,47 +67,23 @@ const Search = (props) => {
     //   setPhoto('https:' + asset.fields.file.url);
   };
 
-  useEffect(() => {
-    getArticle();
-  }, []);
-
-  const goToArticle = (id) => {
+  const goToSearch = () => {
     history.push({
-      pathname: "/content/" + id,
-      search: "?id=" + id,
-      state: { contentId: id },
+      pathname: "/search",
+      search: "?id=" + query,
     });
   };
 
   return (
-    <div className="content">
-      <div>
-        <H3>Search for an article:</H3>
-        <br />
-        <div style={{ display: "flex", alignItems: "center" }}>
-          <Input
-            placeholder="Article name"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-          />
-          <Button type="submit" onClick={getArticle}>
-            Submit
-          </Button>
-        </div>
-      </div>
-      {searchContent != null ? (
-        <div>
-          {searchContent.map((b, i) => (
-            <SearchResult key={i} onClick={() => goToArticle(b.sys.id)}>
-              <div>{b.fields.title}</div>
-              <div>By {b.fields.authors[0]}</div>
-              <hr />
-            </SearchResult>
-          ))}
-        </div>
-      ) : (
-        <div style={{ marginBottom: "40%" }}>no results yet</div>
-      )}
+    <div style={{ display: "flex", alignItems: "center" }}>
+      <Input
+        placeholder="Article name"
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+      />
+      <Button type="submit" onClick={goToSearch}>
+        Submit
+      </Button>
     </div>
   );
 };

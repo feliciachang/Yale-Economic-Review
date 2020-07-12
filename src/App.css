@@ -111,7 +111,7 @@ h6 {
   color: #0f4d92;
 } */
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 400px) {
   .leftnav {
     height: 100%; /* Full-height: remove this if you want "auto" height */
     width: 70px; /* Set the width of the sidebar */

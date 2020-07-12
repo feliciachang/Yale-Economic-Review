@@ -3,6 +3,8 @@ import { useHistory, withRouter } from "react-router-dom";
 import "./pages.css";
 import SignUp from "../components/signup.js";
 import styled from "styled-components";
+import Search from "../components/search";
+
 const contentful = require("contentful");
 
 function Cover() {
@@ -17,13 +19,16 @@ function Cover() {
         accessToken: "xLxHCYuAYz3XfWCE_29SoJe9eVVHfnzTrgIuKg1sIqU",
       });
 
-      let response = await client.getEntry("4GRjQ8wzdSyw0MXCPGmsSi");
+      let response = await client.getEntries({
+        "fields.articleDisplay": "CoverStory",
+        content_type: "articles",
+      });
       console.log(response);
-      setCover(response);
+      setCover(response.items[0]);
 
       let asset = await client.getAsset("SwkqadbMXFiT0oKlgMwBl");
       await console.log("cover photos", asset.fields.file.url);
-      setPhoto("https:" + asset.fields.file.url);
+      setPhoto(response.items[0].fields.featuredPhoto.fields.file.url);
     };
     getArticle();
   }, []);
@@ -115,7 +120,10 @@ function Mag() {
         accessToken: "xLxHCYuAYz3XfWCE_29SoJe9eVVHfnzTrgIuKg1sIqU",
       });
 
-      let response = await client.getEntries();
+      let response = await client.getEntries({
+        "fields.articleDisplay": "Highlight",
+        content_type: "articles",
+      });
       await console.log(response.items[0]);
       setMagContent(response.items.slice(0, 3));
 
@@ -137,7 +145,10 @@ function Mag() {
   if (magContent != null) {
     return (
       <div className="section">
-        <h2>HIGHLIGHTS </h2>
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <h2>HIGHLIGHTS </h2>
+          <Search />
+        </div>
         <hr />
         <br />
         <div className="cards">
@@ -156,6 +167,7 @@ function Mag() {
               </ImgContainer>
               <Title>{article.fields.title}</Title>
               <Subtitle>By {article.fields.authors[0]}</Subtitle>
+              <Subtitle>{article.fields.dateOfPost}</Subtitle>
             </div>
           ))}
         </div>
@@ -181,7 +193,7 @@ function ToggleSubjects() {
 
       console.log("contentType", contentType);
       let response = await client.getEntries({
-        "fields.articleType": contentType,
+        "fields.articleDisplay": "Normal",
         content_type: "articles",
       });
       console.log(response.fields);
@@ -205,14 +217,12 @@ function ToggleSubjects() {
   if (magContent != null) {
     return (
       <div className="section">
-        <h2>MORE FROM</h2>
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <h2>RECENT</h2>
+          <Search />
+        </div>
         <hr />
         <br />
-        <div className="btn-group" style={{ width: "100%" }}>
-          <button onClick={() => setContentType("Campus")}>Campus</button>
-          <button onClick={() => setContentType("Opinion")}>Opinion</button>
-          <button onClick={() => setContentType("us")}>U.S.</button>
-        </div>
         <div className="cards">
           {magContent.map((article, i) => (
             <div
@@ -229,6 +239,7 @@ function ToggleSubjects() {
               </ImgContainer>
               <Title>{article.fields.title}</Title>
               <Subtitle>By {article.fields.authors[0]}</Subtitle>
+              <Subtitle>{article.fields.dateOfPost}</Subtitle>
             </div>
           ))}
         </div>

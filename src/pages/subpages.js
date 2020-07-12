@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useHistory, withRouter } from "react-router-dom";
 import "./pages.css";
 import styled from "styled-components";
+import Search from "../components/search";
 const contentful = require("contentful");
 
 const ImgContainer = styled.div`
@@ -31,6 +32,7 @@ const Subtitle = styled.div`
 `;
 
 const SubPages = () => {
+  const [title, setTitle] = useState("");
   const [campusContent, setCampusContent] = useState([]);
   const [asset, setAsset] = useState("");
   let history = useHistory();
@@ -43,7 +45,8 @@ const SubPages = () => {
       });
 
       let searchParams = new URLSearchParams(window.location.search);
-      console.log(searchParams.get("tag"));
+
+      setTitle(searchParams.get("tag"));
 
       let response = await client.getEntries({
         "fields.articleType": searchParams.get("tag"),
@@ -75,6 +78,10 @@ const SubPages = () => {
         <div>
           <div className="content">
             <div className="section">
+              <div style={{ display: "flex", justifyContent: "space-between" }}>
+                <h2>{title}</h2>
+                <Search />
+              </div>
               <div className="cards">
                 {campusContent.map((article, i) => (
                   <div

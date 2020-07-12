@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
+import { AboutNav, SubmitNav } from "./navbar/subs";
 
 import logo from "./yer.svg";
 import "./App.css";
@@ -91,9 +92,7 @@ function Navbar() {
                 padding: 0,
               }}
             />
-            <a href="/about" style={{ color: "#2C2C2C" }}>
-              About
-            </a>
+            <AboutNav />
             <hr
               style={{
                 display: "block",
@@ -102,20 +101,7 @@ function Navbar() {
                 padding: 0,
               }}
             />
-            <a href="/team" style={{ color: "#2C2C2C" }}>
-              Team
-            </a>
-            <hr
-              style={{
-                display: "block",
-                border: 0,
-                borderTop: "1px solid rgb(240, 240, 240)",
-                padding: 0,
-              }}
-            />
-            <a href="/submit" style={{ color: "#2C2C2C" }}>
-              Submit
-            </a>
+            <SubmitNav />
             <hr
               style={{
                 display: "block",

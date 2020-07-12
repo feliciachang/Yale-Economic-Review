@@ -3,7 +3,18 @@ import { useParams, withRouter, useLocation } from "react-router-dom";
 import "../pages/pages.css";
 import "./content.css";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import styled from "styled-components";
+
 const contentful = require("contentful");
+
+const ImgContainer = styled.div`
+  width: 100%;
+`;
+
+const Img = styled.img`
+  height: 200px;
+  overflow: hidden;
+`;
 
 const Content = (props) => {
   const [article, setArticle] = useState(null);
@@ -45,9 +56,17 @@ const Content = (props) => {
     >
       {article != null ? (
         <div>
+          <ImgContainer>
+            <Img
+              alt=""
+              className="small-card-img"
+              src={article.featuredPhoto.fields.file.url}
+            />
+          </ImgContainer>
           <div className="title">{article.title}</div>
           <div className="subtitle">{article.subtitle}</div>
           <div className="author">By {article.authors[0]}</div>
+          <div className="author">{article.dateOfPost}</div>
           <br />
           <br />
           <div>
