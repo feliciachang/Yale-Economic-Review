@@ -61,12 +61,12 @@ const Search = (props) => {
   return (
     <div style={{ display: "flex", alignItems: "center" }}>
       <Input
-        placeholder="Article name"
+        placeholder="Title, keyword, author..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />
       <Button type="submit" onClick={goToSearch}>
-        Submit
+        Search
       </Button>
     </div>
   );
