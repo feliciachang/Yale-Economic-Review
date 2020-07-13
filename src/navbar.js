@@ -110,17 +110,6 @@ function Navbar() {
                 padding: 0,
               }}
             />
-            <a href="/search" style={{ color: "#2C2C2C" }}>
-              Search
-            </a>
-            <hr
-              style={{
-                display: "block",
-                border: 0,
-                borderTop: "1px solid rgb(240, 240, 240)",
-                padding: 0,
-              }}
-            />
           </div>
         </Router>
         <div className="divided">

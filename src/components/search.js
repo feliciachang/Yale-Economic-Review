@@ -1,19 +1,7 @@
-import React, { useEffect, useState } from "react";
-import {
-  useHistory,
-  useParams,
-  withRouter,
-  useLocation,
-} from "react-router-dom";
-import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import React, { useState } from "react";
+import { useHistory, withRouter } from "react-router-dom";
 import styled from "styled-components";
 const contentful = require("contentful");
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
 
 const Input = styled.input`
   border: 1px solid #bdbdbd;
@@ -61,10 +49,6 @@ const Search = (props) => {
     console.log(response.items);
 
     setSearchContent(response.items);
-
-    //   let asset = await client.getAsset("SwkqadbMXFiT0oKlgMwBl");
-    //   console.log("cover photos", asset.fields.file.url);
-    //   setPhoto('https:' + asset.fields.file.url);
   };
 
   const goToSearch = () => {

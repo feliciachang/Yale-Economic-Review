@@ -16,29 +16,33 @@ const Img = styled.img`
   overflow: hidden;
 `;
 
-const Content = (props) => {
-  const [article, setArticle] = useState(null);
+const StaticPages = (props) => {
+  const [articles, setArticles] = useState(null);
   const [richText, setRichText] = useState(null);
 
   useEffect(() => {
-    const getArticle = async () => {
+    const getArticles = async () => {
       let client = contentful.createClient({
         space: "obm5e8rm0eay",
         accessToken: "xLxHCYuAYz3XfWCE_29SoJe9eVVHfnzTrgIuKg1sIqU",
       });
       let searchParams = new URLSearchParams(window.location.search);
+      console.log(searchParams);
 
-      console.log(searchParams.get("id"));
-      let response = await client.getEntry(searchParams.get("id"));
-      console.log(response.fields);
+      let response = await client.getEntries({
+        "fields.pageType": searchParams.get("id"),
+        content_type: "staticPage",
+      });
+      console.log(response);
 
-      let richText = documentToHtmlString(response.fields.articleContent);
+      let richText = documentToHtmlString(response.items[0].fields.content);
+      console.log(response.items[0].fields.content);
       setRichText(richText);
 
-      setArticle(response.fields);
+      setArticles(response.items);
     };
 
-    getArticle();
+    getArticles();
   }, []);
 
   return (
@@ -49,19 +53,20 @@ const Content = (props) => {
         width: "50vw",
       }}
     >
-      {article != null ? (
+      {articles?.map((a, i) => (
         <div>
-          <ImgContainer>
-            <Img
-              alt=""
-              className="small-card-img"
-              src={article.featuredPhoto.fields.file.url}
-            />
-          </ImgContainer>
-          <div className="title">{article.title}</div>
-          <div className="subtitle">{article.subtitle}</div>
-          <div className="author">By {article.authors[0]}</div>
-          <div className="author">{article.dateOfPost}</div>
+          {a.featuredPhoto !== undefined ? (
+            <ImgContainer>
+              <Img
+                alt=""
+                className="small-card-img"
+                src={a.featuredPhoto.fields.file.url}
+              />
+            </ImgContainer>
+          ) : (
+            <div />
+          )}
+          <div className="title">{a.fields.title}</div>
           <br />
           <br />
           <div>
@@ -70,14 +75,13 @@ const Content = (props) => {
               dangerouslySetInnerHTML={{ __html: richText }}
             />
           </div>
+          <br />
+          <hr />
+          <br />
         </div>
-      ) : (
-        <div>
-          <h5> loading content </h5>
-        </div>
-      )}
+      ))}
     </div>
   );
 };
 
-export default withRouter(Content);
+export default withRouter(StaticPages);

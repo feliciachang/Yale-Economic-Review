@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useHistory, withRouter } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import "./pages.css";
 import SignUp from "../components/signup.js";
 import styled from "styled-components";

@@ -75,7 +75,7 @@ export const AboutNav = () => {
                 paddingLeft: "5px",
                 cursor: "pointer",
               }}
-              href="/about"
+              href="/static?id=About"
             >
               About Us
             </a>
@@ -92,7 +92,7 @@ export const AboutNav = () => {
                 paddingLeft: "5px",
                 cursor: "pointer",
               }}
-              href="/page/team"
+              href="/static?id=Team"
             >
               Team
             </a>
@@ -142,7 +142,24 @@ export const SubmitNav = () => {
                 paddingLeft: "5px",
                 cursor: "pointer",
               }}
-              href="/submit/guidelines"
+              href="/static?id=Submit"
+            >
+              Submit
+            </a>
+          </Item>
+          <Item>
+            {" "}
+            <a
+              style={{
+                color: "black",
+                textDecoration: "none",
+                fontSize: "12px",
+                fontFamily: "Gill Sans",
+                textAlign: "left",
+                paddingLeft: "5px",
+                cursor: "pointer",
+              }}
+              href="/static?id=Guidelines"
             >
               Guidelines
             </a>
@@ -159,7 +176,7 @@ export const SubmitNav = () => {
                 paddingLeft: "5px",
                 cursor: "pointer",
               }}
-              href="/submit/guidelines"
+              href="/static?id=WritingCompetitions"
             >
               Writing Competitions
             </a>
