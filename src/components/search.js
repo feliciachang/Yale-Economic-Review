@@ -33,29 +33,19 @@ const SearchResult = styled.div`
 `;
 
 const Search = (props) => {
-  const [searchContent, setSearchContent] = useState(null);
   const [query, setQuery] = useState("");
+  const [error, setError] = useState(false);
   let history = useHistory();
 
-  const getArticle = async () => {
-    let client = contentful.createClient({
-      space: "obm5e8rm0eay",
-      accessToken: "xLxHCYuAYz3XfWCE_29SoJe9eVVHfnzTrgIuKg1sIqU",
-    });
-    console.log(query);
-    let response = await client.getEntries({
-      query: query,
-    });
-    console.log(response.items);
-
-    setSearchContent(response.items);
-  };
-
   const goToSearch = () => {
-    history.push({
-      pathname: "/search",
-      search: "?id=" + query,
-    });
+    if (query !== "") {
+      history.push({
+        pathname: "/search",
+        search: "?id=" + query,
+      });
+    } else {
+      setError(true);
+    }
   };
 
   return (
@@ -68,6 +58,7 @@ const Search = (props) => {
       <Button type="submit" onClick={goToSearch}>
         Search
       </Button>
+      {error ? <div>please provide a search value</div> : <div />}
     </div>
   );
 };
