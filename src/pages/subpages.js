@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useHistory, withRouter } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import "./pages.css";
 import styled from "styled-components";
 import Search from "../components/search";
+import { getByTitle } from "@testing-library/react";
 const contentful = require("contentful");
 
 const ImgContainer = styled.div`
@@ -73,41 +75,52 @@ const SubPages = () => {
   };
 
   return (
-    <div>
-      {campusContent.size != 0 ? (
-        <div>
-          <div className="content">
-            <div className="section">
-              <div style={{ display: "flex", justifyContent: "space-between" }}>
-                <h2>{title}</h2>
-                <Search />
-              </div>
-              <div className="cards">
-                {campusContent.map((article, i) => (
-                  <div
-                    className="card2"
-                    onClick={() => goToArticle(article.sys.id)}
-                    key={i}
-                  >
-                    <ImgContainer>
-                      <Img
-                        alt=""
-                        className="small-card-img"
-                        src={article.fields.featuredPhoto.fields.file.url}
-                      />
-                    </ImgContainer>
-                    <Title>{article.fields.title}</Title>
-                    <Subtitle>By {article.fields.authors[0]}</Subtitle>
-                  </div>
-                ))}
+    <>
+      <Helmet>
+        <title>The Yale Economic Review - {title}</title>
+        <meta
+          name="description"
+          content="The Yale Economic Review (YER), established in 2005, is a non-profit, bi-annual journal of popular economics which reports on developments in economics to a broad audience. "
+        />
+      </Helmet>
+      <div>
+        {campusContent.size != 0 ? (
+          <div>
+            <div className="content">
+              <div className="section">
+                <div
+                  style={{ display: "flex", justifyContent: "space-between" }}
+                >
+                  <h2>{title}</h2>
+                  <Search />
+                </div>
+                <div className="cards">
+                  {campusContent.map((article, i) => (
+                    <div
+                      className="card2"
+                      onClick={() => goToArticle(article.sys.id)}
+                      key={i}
+                    >
+                      <ImgContainer>
+                        <Img
+                          alt=""
+                          className="small-card-img"
+                          src={article.fields.featuredPhoto.fields.file.url}
+                        />
+                      </ImgContainer>
+                      <Title>{article.fields.title}</Title>
+                      <Subtitle>By {article.fields.authors[0]}</Subtitle>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      ) : (
-        <div>loading content</div>
-      )}
-    </div>
+        ) : (
+          <div>loading content</div>
+        )}
+      </div>
+    </>
   );
 };
 

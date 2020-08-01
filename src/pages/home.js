@@ -4,6 +4,7 @@ import "./pages.css";
 import SignUp from "../components/signup.js";
 import styled from "styled-components";
 import Search from "../components/search";
+import { Helmet } from "react-helmet";
 
 const contentful = require("contentful");
 
@@ -350,25 +351,34 @@ function VerticalContent() {
 
 function Home() {
   return (
-    <div className="content">
-      <Cover />
-      <br />
-      <br />
-      <br />
-      <Mag />
-      <br />
-      <br />
-      <br />
-      <br />
-      <ToggleSubjects />
-      <br />
-      <br />
-      <br />
-      <br />
-      <SignUp />
-      <br />
-      <br />
-    </div>
+    <>
+      <Helmet>
+        <title>The Yale Economic Review - Home</title>
+        <meta
+          name="description"
+          content="The Yale Economic Review (YER), established in 2005, is a non-profit, bi-annual journal of popular economics which reports on developments in economics to a broad audience. "
+        />
+      </Helmet>
+      <div className="content">
+        <Cover />
+        <br />
+        <br />
+        <br />
+        <Mag />
+        <br />
+        <br />
+        <br />
+        <br />
+        <ToggleSubjects />
+        <br />
+        <br />
+        <br />
+        <br />
+        <SignUp />
+        <br />
+        <br />
+      </div>
+    </>
   );
 }
 

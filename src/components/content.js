@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { withRouter, useLocation } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import "../pages/pages.css";
 import "./content.css";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
@@ -42,41 +43,50 @@ const Content = (props) => {
   }, []);
 
   return (
-    <div
-      style={{
-        marginLeft: "25vw",
-        marginBottom: "10%",
-        width: "50vw",
-      }}
-    >
-      {article != null ? (
-        <div>
-          <ImgContainer>
-            <Img
-              alt=""
-              className="small-card-img"
-              src={article.featuredPhoto.fields.file.url}
-            />
-          </ImgContainer>
-          <div className="title">{article.title}</div>
-          <div className="subtitle">{article.subtitle}</div>
-          <div className="author">By {article.authors[0]}</div>
-          <div className="author">{article.dateOfPost}</div>
-          <br />
-          <br />
+    <>
+      <Helmet>
+        <title>The Yale Economic Review - {article?.title || ""}</title>
+        <meta
+          name="description"
+          content="The Yale Economic Review (YER), established in 2005, is a non-profit, bi-annual journal of popular economics which reports on developments in economics to a broad audience. "
+        />
+      </Helmet>
+      <div
+        style={{
+          marginLeft: "25vw",
+          marginBottom: "10%",
+          width: "50vw",
+        }}
+      >
+        {article != null ? (
           <div>
-            <div
-              className="body"
-              dangerouslySetInnerHTML={{ __html: richText }}
-            />
+            <ImgContainer>
+              <Img
+                alt=""
+                className="small-card-img"
+                src={article.featuredPhoto.fields.file.url}
+              />
+            </ImgContainer>
+            <div className="title">{article.title}</div>
+            <div className="subtitle">{article.subtitle}</div>
+            <div className="author">By {article.authors[0]}</div>
+            <div className="author">{article.dateOfPost}</div>
+            <br />
+            <br />
+            <div>
+              <div
+                className="body"
+                dangerouslySetInnerHTML={{ __html: richText }}
+              />
+            </div>
           </div>
-        </div>
-      ) : (
-        <div>
-          <h5> loading content </h5>
-        </div>
-      )}
-    </div>
+        ) : (
+          <div>
+            <h5> loading content </h5>
+          </div>
+        )}
+      </div>
+    </>
   );
 };
 
